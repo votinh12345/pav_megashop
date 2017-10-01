@@ -1,0 +1,1 @@
+/var/www/html/pav_megashop/vendor/magento/module-search/view/frontend/web/form-mini.js

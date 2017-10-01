@@ -1,0 +1,1 @@
+/var/www/html/pav_megashop/vendor/magento/theme-frontend-blank/web/js/responsive.js

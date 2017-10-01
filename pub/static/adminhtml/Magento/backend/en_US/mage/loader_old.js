@@ -1,0 +1,1 @@
+/var/www/html/pav_megashop/lib/web/mage/loader_old.js

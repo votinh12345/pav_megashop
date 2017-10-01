@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="top.links">
+            <block class="Magento\Framework\View\Element\Template" name="link_checkout" template="Magento_Theme::html/link_checkout.phtml">
+                <arguments>
+                    <argument name="link_attributes" xsi:type="string">checkout</argument>
+                    <argument name="label" xsi:type="string">Checkout</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Framework\View\Element\Template" name="link_shopping_cart" template="Magento_Theme::html/link_shopping_cart.phtml">
+                <arguments>
+                    <argument name="link_attributes" xsi:type="string">checkout/cart</argument>
+                    <argument name="label" xsi:type="string">Shopping Cart</argument>
+                </arguments>
+            </block>
+
+        </referenceBlock>
+    </body>
+</page>

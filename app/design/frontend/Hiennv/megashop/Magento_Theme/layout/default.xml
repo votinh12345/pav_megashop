@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container name="header.panel.wrapper" htmlClass="wrapper" htmlTag="div" before="-" htmlId="topbar">
+                <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="header container">
+                    <container name="show-desktop" htmlTag="div" htmlClass="show-desktop">
+                        <container name="quick-top-link" htmlTag="div" htmlClass="quick-top-link  links pull-right">
+                            <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="switch/languages.phtml"/>
+                            <container name="welcome-pull-right" htmlTag="div" htmlClass="welcome pull-right">
+                                <container htmlTag="div" htmlClass="btn-group box-user">
+                                    <block class="Magento\Framework\View\Element\Template" name="button_drop_menu" template="Magento_Theme::html/drop_menu.phtml" before="-"></block>
+                                    <block class="Magento\Framework\View\Element\Html\Links" name="top.links">
+                                        <arguments>
+                                            <argument name="css_class" xsi:type="string">header links dropdown-menu setting-menu</argument>
+                                        </arguments>
+                                    </block>
+                                </container>
+                            </container>
+                        </container>
+
+                        <container name="quick-access-pull-left" htmlTag="div" htmlClass="quick-access pull-left  hidden-sm hidden-xs"></container>
+                    </container>
+
+                </container>
+            </container>
+
+            <container name="has-verticalmenu" as="has-verticalmenu" htmlTag="div" htmlClass="has-verticalmenu">
+                <container name="header-wrapper" label="Page Header" as="header-wrapper" htmlTag="div" htmlClass="header content" htmlId="header-main">
+                    <container htmlTag="div" htmlClass="container">
+                        <container htmlTag="div" htmlClass="row" name="row-container-header-wrapper">
+                            <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+                                <arguments>
+                                    <argument name="logo_img_width" xsi:type="number">189</argument>
+                                    <argument name="logo_img_height" xsi:type="number">64</argument>
+                                </arguments>
+                            </block>
+
+                            <container htmlTag="div" htmlClass="hidden-xs hidden-sm inner pull-left" name="header-wrapper-pull-left">
+                                <container htmlTag="div" htmlClass="support">
+                                    <block class="Magento\Framework\View\Element\Template" name="free_ship" template="Magento_Theme::html/free_ship.phtml"></block>
+                                    <block class="Magento\Framework\View\Element\Template" name="exchange" template="Magento_Theme::html/exchange.phtml"></block>
+                                    <block class="Magento\Framework\View\Element\Template" name="phone_number" template="Magento_Theme::html/phone_number.phtml"></block>
+                                </container>
+                            </container>
+
+                            <container htmlTag="div" htmlClass="pull-right shopping-cart" name="pull-right-shopping-cart" after="header-wrapper-pull-left">
+                            </container>
+
+                        </container>
+                    </container>
+                </container>
+
+                <container name="pav-masshead" as="pav-masshead" htmlTag="section" htmlClass="pav-masshead aligned-right" htmlId="pav-masshead">
+
+                </container>
+            </container>
+        </referenceContainer>
+
+        <move destination="pav-masshead" element="navigation.sections"></move>
+        <referenceBlock name="store.settings.language" remove="true"/>
+        <referenceBlock name="store.settings.currency" remove="true"/>
+
+        <referenceContainer name="main">
+            <container htmlTag="div" htmlClass="container" name="container-content">
+                <container htmlTag="div" htmlClass="row" name="row-content">
+                    <container name="content" as="content" htmlClass="col-sm-9" htmlTag="div" htmlId="content"></container>
+                </container>
+            </container>
+
+            <container name="content.top" label="Main Content Top"/>
+            <container name="content.aside" label="Main Content Aside"/>
+            <container name="content.bottom" label="Main Content Bottom"/>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+
+            <referenceBlock name="footer_links" remove="true"/>
+            <container name="footer-top" as="footer-top" htmlTag="div" htmlClass="footer-top">
+                <container htmlTag="div" htmlClass="container" name="container-top-footer">
+                    <container htmlTag="div" htmlClass="row" name="row-top-footer" label="Container Top Footer"></container>
+                </container>
+            </container>
+
+            <container name="footer-center" as="footer-center" htmlTag="div" htmlClass="footer-center">
+                <container htmlTag="div" htmlClass="container" name="container-footer-center">
+                    <container htmlTag="div" htmlClass="row" name="row-center-footer" label="Container Center Footer"></container>
+                </container>
+            </container>
+
+            <container name="powered" as="powered" label="powered" htmlTag="div" htmlId="powered" after="-">
+                <container htmlTag="div" htmlClass="container" name="container-footer-powered">
+                    <container htmlTag="div" htmlClass="top" name="top-footer-powered">
+                        <block class="Magento\Framework\View\Element\Template" name="top_scrollup" template="Magento_Theme::html/top_scrollup.phtml"></block>
+                    </container>
+                    <container htmlTag="div" htmlClass="copyright pull-left" name="copyright-pull-left"></container>
+                    <container htmlTag="div" htmlClass="paypal pull-right" name="paypal-pull-right"></container>
+                </container>
+            </container>
+
+        </referenceContainer>
+        <move element="copyright" destination="copyright-pull-left"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+
+    </body>
+</page>

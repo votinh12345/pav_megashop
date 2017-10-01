@@ -1,0 +1,1 @@
+/var/www/html/pav_megashop/vendor/magento/module-admin-notification/view/adminhtml/web/toolbar_entry.js
